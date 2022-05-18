@@ -28,6 +28,30 @@ class User extends Authenticatable
     public const SEEN_STATUS               = 'seen';
     public const UN_SEEN_STATUS            = 'unseen';
 
+    // Houses table
+    public const HOUSE_FOR_RENT            = 'rent';
+    public const HOUSE_FOR_SELL            = 'sell';
+
+    public const HOUSE_SELL_STATUS         = 'sell';
+    public const HOUSE_SOLD_STATUS         = 'sold';
+
+    public const DELETED_STATUS            = 'deleted';
+    public const NOT_DELETED_STATUS        = 'not deleted';
+
+    // Payments table
+    public const VISA_CARD                 = 'visa';
+    public const MASTER_CARD               = 'master';
+    public const MAESTRO_CARD              = 'maestro';
+    public const AMERICAN_EXPRESS_CARD     = 'american_express';
+
+    public const PAYMENT_PENDING           = 'pending';
+    public const PAYMENT_FAILED            = 'failed';
+    public const PAYMENT_PAID              = 'paid';
+
+    // Favorites table
+    public const ADDED_TO_FAVORITE         = 'favorite';
+    public const NOT_ADDED_TO_FAVORITE     = 'unfavorite';
+
 
 
     /**
