@@ -223,18 +223,6 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
         });
 
-        Schema::create('concerns', function (Blueprint $table){
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->text('concerns');  
-            $table->bigInteger('flags', 0)->default();
-            $table->timestamps();
-
-            // Foreign key
-            $table->foreignId('user_id')->references('id')->on('users');
-        });
-
         Schema::create('contact_us', function (Blueprint $table){
             $table->id();
             $table->string('name');
@@ -268,9 +256,7 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::table('concerns', function (Blueprint $table) {
-        //     $table->dropForeign('concerns_user_id_foreign');
-        // });
+      
         // Schema::table('contact_us', function (Blueprint $table) {
         //     $table->dropForeign('contact_us_user_id_foreign');
         // });
