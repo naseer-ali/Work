@@ -12,18 +12,21 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     
-    public const ROLE_CUSTOMER                  = 'customer'; 
-    public const ROLE_SELLER                    = 'seller'; 
-    public const ROLE_PROFESSIONAL              = 'professional'; 
+    public const ROLE_CUSTOMER             = 'customer'; 
+    public const ROLE_SELLER               = 'seller'; 
+    public const ROLE_PROFESSIONAL         = 'professional'; 
 
-    public const LENDER_APPROVED                = 'approved';
-    public const LENDER_UNAPPROVED              = 'unapproved';
+    public const USER_ACTIVE               = 'active';
+    public const USER_IN_ACTIVE            = 'inactive';
 
-    public const WORKING_WITH_AGENT             = 'yes';
-    public const NOT_WORKING_WITH_AGENT         = 'no';
+    public const LENDER_APPROVED           = 'approved';
+    public const LENDER_UNAPPROVED         = 'unapproved';
 
-    public const SEEN_STATUS                    = 'seen';
-    public const UN_SEEN_STATUS                = 'unseen';
+    public const WORKING_WITH_AGENT        = 'yes';
+    public const NOT_WORKING_WITH_AGENT    = 'no';
+
+    public const SEEN_STATUS               = 'seen';
+    public const UN_SEEN_STATUS            = 'unseen';
 
 
 

@@ -26,6 +26,11 @@ return new class extends Migration
             $table->string('phone');
             $table->string('post_code');
             $table->string('country');
+            $table->enum('status', 
+            [
+                User::USER_ACTIVE,
+                User::USER_IN_ACTIVE,
+            ])->default(User::USER_IN_ACTIVE);
             $table->enum('user_type',
             [
                 User::ROLE_CUSTOMER, // Model
@@ -76,19 +81,19 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table){
             $table->id();
             $table->text('message');
-            $table->string('sent_at');
             $table->enum('seen_status', 
             [
                 User::SEEN_STATUS,
                 User::UN_SEEN_STATUS,
             ])->default(User::UN_SEEN_STATUS);
-            $table->string('message_from');
-            $table->string('message_to');
             $table->bigInteger('flags', 0)->default();
             $table->timestamps();
+            
+            // Foreign key
+            $table->foreignId('to_id')->references('id')->on('users');
 
             // Foreign key
-            // $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('from_id')->references('id')->on('users');
         });
 
         // Schema::create('review_for_agents', function (Blueprint $table){
@@ -98,6 +103,7 @@ return new class extends Migration
         //     $table->integer('quality_of_service')->nullable();
         //     $table->integer('negotiation_knowledge')->nullable();
         //     $table->text('comment');
+        //     $table->integer('number_of_reviews');
         //     $table->bigInteger('flags', 0)->default();
         //     $table->timestamps();
 
